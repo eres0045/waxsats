@@ -481,8 +481,8 @@ function HomeScreen({ balance, balanceLoading, onRefresh, listening, voiceSuppor
 
       {/* Quick actions */}
       <nav className="mt-6 grid grid-cols-3 gap-3" aria-label="Actions">
-        <button onClick={goSend} className="btn-big bg-emerald-500 text-white">📤<br />Envoyer</button>
-        <button onClick={goReceive} className="btn-big bg-sky-600 text-white">📥<br />Recevoir</button>
+        <button onClick={goSend} className="btn-big bg-emerald-500 text-white">↑<br />Envoyer</button>
+        <button onClick={goReceive} className="btn-big bg-sky-600 text-white">↓<br />Recevoir</button>
         <button onClick={goHistory} className="btn-big bg-white/10 text-white">📜<br />Historique</button>
       </nav>
     </main>
@@ -622,7 +622,7 @@ function HistoryScreen({ history, onBack }) {
             <li key={h.id} className="flex items-center justify-between rounded-2xl bg-white/5 px-4 py-4">
               <div>
                 <p className="text-lg font-bold">
-                  {h.type === 'send' ? '📤 Envoyé à' : '📥 Reçu de'} {h.counterparty || '—'}
+                  {h.type === 'send' ? '↑ Envoyé à' : '↓ Reçu de'} {h.counterparty || '—'}
                 </p>
                 <p className="text-sm text-white/60">{h.memo || ''} · {formatDate(h.at)} · {h.status}</p>
               </div>
